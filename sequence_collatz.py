@@ -62,4 +62,4 @@ if __name__ == "__main__":
         assert [2, 1] == create_collatz(2)
         assert [13, 40, 20, 10, 5, 16, 8, 4, 2, 1] == create_collatz(13)
 
-    print(f"Numero que retornaria uma lista com tamanho maior que 10: {find_list_of_lenght(10)}")
+    print(f"Numero que retornaria uma lista com tamanho maior que 10: {find_list_more_lenght(10)}")
