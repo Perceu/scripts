@@ -9,7 +9,7 @@ parser.add_argument('--capture-position', action='store_true')
 parser.add_argument('--position')
 
 args = parser.parse_args()
-
+default_position = dict(x=3222, y=413)
 if args.capture_position:
     while True:
         print(gui.position())
@@ -20,5 +20,5 @@ elif args.position:
         gui.click(x=int(positions[0]), y=int(positions[1]))
 else:
     for i in range(args.clicks):
-        gui.click(x=3222, y=413)
+        gui.click(**default_position)
 
