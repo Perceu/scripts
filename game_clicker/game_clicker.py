@@ -9,17 +9,28 @@ parser.add_argument('--capture-position', action='store_true', help='use para ca
 parser.add_argument('--position', help='use para setar a posição que deseja clicar')
 
 args = parser.parse_args()
+
 default_position = dict(x=10, y=10)
+
 if args.capture_position:
+
     while True:
-        print(gui.position())
+        sleep(1)
+        position = gui.position()
+        print(position)
+
 elif args.position:
+
     positions = args.position.split(",")
     print(positions)
+
     for i in range(args.clicks):
         gui.click(x=int(positions[0]), y=int(positions[1]))
+
 elif args.clicks:
+
     for i in range(args.clicks):
         gui.click(**default_position)
+
 else:
     print("peca ajuda para os parametros -h")
