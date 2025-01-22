@@ -3,6 +3,7 @@ from faker import Faker
 
 app = FastAPI()
 
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
@@ -14,7 +15,5 @@ def read_names():
 
     names = list()
     for i in range(10):
-        names.append(
-            {'name': fake.name()}
-        )
+        names.append({"name": fake.name()})
     return names
